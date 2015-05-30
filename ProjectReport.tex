@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\begin{document}
+\title{Automated Deployment of OpenStreetMap Data in Apache Spark Cluster}
+\author{Rebecca Appelbaum, Colin McKibben, Thinh Vu}
+\maketitle
+
+\section{Overview}
+
+
+\section{Assumptions}
+\begin{enumerate}
+\item User already has cloudmesh installed
+\end{enumerate}
+
+\section{Instructions}
+\begin{enumerate}
+\item Make a copy of our project library from github.  It can be found at \verb*https://github.com/futuresystems/465-project-mckibbenc-rebecca-appelbaum-imthinhvu*\ 
+\begin{itemize}
+\item Example command to copy library:\verb*git clone git@github.com:futuresystems/465-mckibbenc-rebecca-appelbaum-imthinhvu.git*\ 
+\end{itemize}
+\item Create a file called config in your home ssh directory.  Write the following in the config file:
+\begin{itemize}
+\item StrictHostKeyChecking=no
+\item This file will disable strict host key checking. The user could chose to apply this to all hosts or you can specify the hosts that you want this to apply to.  We chose to incorporate this so that users will not have any manual entry when implementing our cm command.
+\end{itemize}
+\item Change directories into our project folder. \verb*cd 465-project-mckibenc-rebecca-appelbaum-imthinvu/cloudmesh\_spark*.
+\item Run the following command:
+\begin{itemize}
+\item Python setup.py install
+\end{itemize}
+\item Install the ansible by running the ansible shell script.  Run the below script
+\begin{itemize}
+\item \verb*ansible-playbook -i inventory.txt -c ssh spark.yaml*\ 
+\end{itemize}
+\item Export the cm command with the following
+\begin{itemize}
+\item \verb*CM\_SPARK\_DIR=/home/ubuntu/465-project/mckibbenc-rebecca-appelbaum-imthinhvu/cloudmesh\_spark*.
+\end{itemize}
+\item Before running the cm spark command, create an ssh agent.  This will allow you to avoid typing in your password multiple times.
+\begin{itemize}
+\item \verb*eval$(ssh-agent)*\ 
+\item \verb*ssh-add*\ 
+\end{itemize}
+\item Deploy clusters and have spark installed on each cluster.  The command will automatically deploy 3 clusters.  However this can be customized by adding --count=N where N is the number of clusters you want deployed.  Additional documentation can be found if you write cm spark.
+\begin{itemize}
+\item \verb*cm deploy spark example*\ 
+\end{itemize}
+\item You can also select the node that you want as the master by running a start command with the cluster that you want to be the master.
+\begin{itemize}
+\item Ex. cm spark start example_1
+\end{itemize}
+\item To destroy the clusters you can run
+\begin{itemize}
+\item \verb*cm spark destroy example*\ 
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}
