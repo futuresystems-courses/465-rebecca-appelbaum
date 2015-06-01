@@ -1,0 +1,117 @@
+Script started on Mon 01 Jun 2015 06:33:14 PM EDT
+torque/2.5.5 version 2.5.5 loaded
+moab version 5.4.0 loaded
+git version 2.2.1 loaded
+]0;appelbaum@i136:~(ENV)(ansible)[appelbaum@i136 ~]$ heat stack-create --template-file appelbaum_heat_EX2.yaml wordpre ss-appl[Kelbaum
++--------------------------------------+------------------------------+--------------------+----------------------+
+| id                                   | stack_name                   | stack_status       | creation_time        |
++--------------------------------------+------------------------------+--------------------+----------------------+
+| f51aca2a-0c3c-405c-a0c2-1b7d810c11d0 | heat-tutorial-naomi          | CREATE_COMPLETE    | 2015-05-07T14:23:59Z |
+| f640cc23-1832-4d2e-bafd-907f6e0a1193 | heat-wordpress-ex2-naomi     | CREATE_COMPLETE    | 2015-05-07T14:45:01Z |
+| b67aa569-42dc-4198-99bf-67e7db3b7c5e | heat-lab-lguenther           | CREATE_FAILED      | 2015-05-09T06:38:02Z |
+| 23bb4c11-f57f-4913-839e-3b67e01965e7 | wordpresslab                 | CREATE_COMPLETE    | 2015-05-09T17:15:22Z |
+| 13b41aec-032e-4765-9f31-4d0b600ebfc6 | heat-lab-wordpress-lguenther | CREATE_COMPLETE    | 2015-05-09T17:31:59Z |
+| e977b497-1002-46fb-b87c-4894b088020f | heat-lab-lguenther2          | CREATE_FAILED      | 2015-05-09T17:45:31Z |
+| 3ed15ffb-7bee-423d-af45-c9169e544e0f | excercise1-branko            | CREATE_COMPLETE    | 2015-05-09T17:57:36Z |
+| 6c52bb1e-99b7-4386-bb4d-51e4891023cb | excercise1-branko2           | CREATE_COMPLETE    | 2015-05-09T18:00:09Z |
+| 6fbe4f1d-c0e6-4ea0-8260-1960b9094da8 | heat-lab-lguenthefinal       | CREATE_COMPLETE    | 2015-05-09T18:02:09Z |
+| cc03b7b9-27cc-4e7c-a9af-6333d30e3a29 | heat-tutorial-leodeana       | CREATE_COMPLETE    | 2015-05-13T21:53:26Z |
+| b1e29abe-7e4c-470c-8df7-720b5bcba036 | heat-tutorial1-liangwen      | CREATE_FAILED      | 2015-05-25T19:32:31Z |
+| f1ddfe5e-603b-49ea-93cb-b8b4ab56f853 | heat-tutorial2-liangwen      | CREATE_FAILED      | 2015-05-25T19:34:19Z |
+| bb78b559-82c8-4411-ac43-9e957c22236d | heat-tutorial3-liangwen      | CREATE_FAILED      | 2015-05-25T19:57:16Z |
+| 679839c8-74f1-4888-a6ef-bb6f9993ebdb | heat-tutorial4-liangwen      | CREATE_FAILED      | 2015-05-25T19:57:26Z |
+| d6c703e3-6545-4aaa-9eef-fb5b8f782300 | wordpress-liangwen           | CREATE_COMPLETE    | 2015-05-25T20:11:24Z |
+| 8e819f25-2eb9-4ad4-9b7d-8608719ea573 | heat-tutorial-tomglazed      | CREATE_COMPLETE    | 2015-05-26T16:49:52Z |
+| 7c9356cc-6d52-4c35-bc37-9c84c9bb4188 | heat-exercise2-desouzar      | CREATE_COMPLETE    | 2015-05-31T16:45:54Z |
+| 75785e88-2858-4796-b554-81093779a671 | wordpress-appelbaum          | CREATE_IN_PROGRESS | 2015-06-01T22:34:02Z |
++--------------------------------------+------------------------------+--------------------+----------------------+
+]0;appelbaum@i136:~(ENV)(ansible)[appelbaum@i136 ~]$ [K(ENV)(ansible)[appelbaum@i136 ~]$ curl -L[K(ENV)(ansible)[appelbaum@i136 ~]$ curl -L[K(ENV)(ansible)[appelbaum@i136 ~]$ curl -L http:149.165.159.37/wordpress
+curl: (6) Couldn't resolve host 'http:149.165.159.37'
+]0;appelbaum@i136:~(ENV)(ansible)[appelbaum@i136 ~]$ curl -L http:149.165.159.37/wordpress/149.165.159.37/wordpress/149.165.159.37/wordpress
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>WordPress &rsaquo; Installation</title>
+	<link rel='stylesheet' id='buttons-css'  href='http://149.165.159.37/wordpress/wp-includes/css/buttons.min.css?ver=4.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='install-css'  href='http://149.165.159.37/wordpress/wp-admin/css/install.min.css?ver=4.2.2' type='text/css' media='all' />
+</head>
+<body class="wp-core-ui">
+<h1 id="logo"><a href="https://wordpress.org/" tabindex="-1">WordPress</a></h1>
+
+<h1>Welcome</h1>
+<p>Welcome to the famous five-minute WordPress installation process! Just fill in the information below and you&#8217;ll be on your way to using the most extendable and powerful personal publishing platform in the world.</p>
+
+<h1>Information needed</h1>
+<p>Please provide the following information. Don&#8217;t worry, you can always change these settings later.</p>
+
+<form id="setup" method="post" action="install.php?step=2" novalidate="novalidate">
+	<table class="form-table">
+		<tr>
+			<th scope="row"><label for="weblog_title">Site Title</label></th>
+			<td><input name="weblog_title" type="text" id="weblog_title" size="25" value="" /></td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="user_login">Username</label></th>
+			<td>
+			<input name="user_name" type="text" id="user_login" size="25" value="" />
+				<p>Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods, and the @ symbol.</p>
+						</td>
+		</tr>
+				<tr>
+			<th scope="row">
+				<label for="pass1">Password, twice</label>
+				<p>A password will be automatically generated for you if you leave this blank.</p>
+			</th>
+			<td>
+				<input name="admin_password" type="password" id="pass1" size="25" value="" />
+				<p><input name="admin_password2" type="password" id="pass2" size="25" value="" /></p>
+				<div id="pass-strength-result">Strength indicator</div>
+				<p>Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).</p>
+			</td>
+		</tr>
+				<tr>
+			<th scope="row"><label for="admin_email">Your E-mail</label></th>
+			<td><input name="admin_email" type="email" id="admin_email" size="25" value="" />
+			<p>Double-check your email address before continuing.</p></td>
+		</tr>
+		<tr>
+			<th scope="row">Privacy</th>
+			<td colspan="2"><label><input type="checkbox" name="blog_public" id="blog_public" value="1"  checked='checked' /> Allow search engines to index this site.</label></td>
+		</tr>
+	</table>
+	<p class="step"><input type="submit" name="Submit" value="Install WordPress" class="button button-large" /></p>
+	<input type="hidden" name="language" value="" />
+</form>
+<script type="text/javascript">var t = document.getElementById('weblog_title'); if (t){ t.focus(); }</script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-includes/js/jquery/jquery.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _zxcvbnSettings = {"src":"http:\/\/149.165.159.37\/wordpress\/wp-includes\/js\/zxcvbn.min.js"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-includes/js/zxcvbn-async.min.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pwsL10n = {"empty":"Strength indicator","short":"Very weak","bad":"Weak","good":"Medium","strong":"Strong","mismatch":"Mismatch"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-admin/js/password-strength-meter.min.js?ver=4.2.2'></script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-includes/js/underscore.min.js?ver=1.6.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-includes/js/wp-util.min.js?ver=4.2.2'></script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-admin/js/user-profile.min.js?ver=4.2.2'></script>
+<script type='text/javascript' src='http://149.165.159.37/wordpress/wp-admin/js/language-chooser.min.js?ver=4.2.2'></script>
+</body>
+</html>
+]0;appelbaum@i136:~(ENV)(ansible)[appelbaum@i136 ~]$ exit
+exit
+
+Script done on Mon 01 Jun 2015 06:43:00 PM EDT
